@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <a-comp>
+      <el-button>trigger A</el-button>
+    </a-comp>
+    <b-comp>
+      <el-button>trigger B</el-button>
+    </b-comp>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import AComp from './components/A'
+import BComp from './components/B'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-  },
-};
+    AComp,
+    BComp,
+  }
+}
 </script>
 
 <style>
