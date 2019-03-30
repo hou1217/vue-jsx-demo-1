@@ -42,11 +42,8 @@ export default {
     },
   },
   render() {
-    const scopedSlots = {
-      reference: () => this.$slots.default,
-    }
     return (
-      <ElPopover placement="top" width="160" vModel={this.visible} scopedSlots={scopedSlots}>
+      <ElPopover placement="top" width="160" vModel={this.visible}>
         {this.$slots.content ? this.$slots.content : (
           <p>{this.content}</p>
         )}
@@ -54,6 +51,7 @@ export default {
           <ElButton size="mini" type="text" vOn:click={this.onCancelClick}>{this.cancelText}</ElButton>
           <ElButton type="primary" size="mini" vOn:click={this.onOkClick}>{this.okText}</ElButton>
         </div>
+        <template slot="reference">{this.$slots.default}</template>
       </ElPopover>
     )
   }
